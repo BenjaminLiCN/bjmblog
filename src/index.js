@@ -1,24 +1,12 @@
-import React from 'react'
-import { render } from 'react-dom'
-import { HashRouter } from 'react-router-dom'
-import { Provider } from 'react-redux'
-import Pages from './pages'
-import store from './store'
+import React from 'react';
+import ReactDOM from 'react-dom';
+import './index.css';
+import App from './App';
+import * as serviceWorker from './serviceWorker';
 
-class App extends React.Component {
-    render() {
-        return (
-            <Provider store={store}>
-                <HashRouter>
-                    <Pages />
-                </HashRouter>
-            </Provider>
-        )
-    }
-}
+ReactDOM.render(<App />, document.getElementById('root'));
 
-render(<App />, document.getElementById('root'))
-
-if (module.hot) {
-    module.hot.accept()
-}
+// If you want your app to work offline and load faster, you can change
+// unregister() to register() below. Note this comes with some pitfalls.
+// Learn more about service workers: https://bit.ly/CRA-PWA
+serviceWorker.unregister();
